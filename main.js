@@ -11,7 +11,7 @@ const textErr = document.getElementById('text-err')
 const keyErr = document.getElementById('key-err')
 const toggleErr = document.getElementById('select-err')
 
-function checkForErrors(text, key, toggle) {
+function displayErrors(text, key, toggle) {
   if (toggle === "") {
     toggleErr.textContent = "Please choose an option."
   } else {
@@ -27,7 +27,6 @@ function checkForErrors(text, key, toggle) {
   } else {
     textErr.textContent = ""
   }
-  return toggle === "" && key === "" && text === ""
 }
 
 function encode(text, key) {
@@ -106,8 +105,9 @@ document.getElementById('submit').addEventListener('click', () => {
   var text = textEl.value
   var key = keyEl.value
   var toggle = toggleEl.value
-  if (!checkForErrors(text, key, toggle) ) {
-    if (toggle == "encode") {encode(text, key)}
-    if (toggle == "decode") {decode(text, key)}
+  if (!toggle == "" && !key == "" && !text == "") {
+    if (toggle == "encode") {encode(text, key)} else {decode(text, key)}
+  } else {
+    displayErrors(text, key, toggle)
   }
 })
