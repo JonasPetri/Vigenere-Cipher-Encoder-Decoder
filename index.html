@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <h1>Welcome to Vigènere Cipher Encoder!</h1>
+  <h3>To encode or decode enter text and a key.</h3>
+  <label for="text">Enter text:</label>
+  <input autocomplete="off" class="input" id="text" placeholder="Type some text..."><span class="err" id="text-err"></span><br><br>
+  <label for="key">Enter key:</label>
+  <input autocomplete="off" class="input" id="key" placeholder="Type a key..."><span class="err" id="key-err"></span><br><br>
+  <select id="toggle" name="toggle" size="2">
+    <option value="encode">Encode</option>
+    <option value="decode">Decode</option>
+  </select><span class="err" id="select-err"></span><br><br>
+  <button id="submit" class="button">Submit</button>
+  <p id="result"></p>
+  <script type="module" src="main.js"></script>
+  </body>
+</html>
