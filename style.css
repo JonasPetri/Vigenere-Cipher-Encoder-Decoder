@@ -11,6 +11,7 @@ body {
   border-radius: 10px;
   padding: 5px 5px;
   border-color: rgb(245, 17, 17);
+  font-size: 0.9em;
 }
 
 .input:focus {
@@ -19,18 +20,22 @@ body {
 }
 
 .button {
-  padding: 5px 5px;
+  padding: 7px 7px;
   border-radius: 10px;
-  border-color: blue;
+  border-color: rgb(16, 201, 201);
+  font-size: 0.9em;
   background-color: aqua;
 }
 
 .button:active {
-  background-color: cornflowerblue;
+  background-color: aquamarine;
 }
 
 #toggle {
   overflow: hidden;
+  font-size: 0.9em;
+  padding: 5px 5px;
+  border-radius: 10px;
 }
 
 .err {
