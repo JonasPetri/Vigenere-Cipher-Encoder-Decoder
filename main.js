@@ -12,11 +12,6 @@ const keyErr = document.getElementById('key-err')
 const toggleErr = document.getElementById('select-err')
 
 function displayErrors(text, key, toggle) {
-  if (toggle === "") {
-    toggleErr.textContent = "Please choose an option."
-  } else {
-    toggleErr.textContent = ""
-  }
   if (key === "") {
     keyErr.textContent = "Please type a key."
   } else {
@@ -40,8 +35,10 @@ function encode(text, key) {
     } else if (smallLetters.includes(key[i])) {
       var keyNum = smallLetters.indexOf(key[i])
     } else {
-      keyErr.textContent = "Please select a key that only contains regular letters."
+      keyErr.textContent = "Please select a key that only contains regular letters and no spaces."
+      return
     }
+    keyErr.textContent = ""
     if (bigLetters.includes(text[i])) {
       var txtNum =  bigLetters.indexOf(text[i])
       var num = txtNum + keyNum
@@ -76,8 +73,10 @@ function decode(text, key) {
     } else if (smallLetters.includes(key[i])) {
       var keyNum = smallLetters.indexOf(key[i])
     } else {
-      keyErr.textContent = "Please select a key that only contains regular letters."
+      keyErr.textContent = "Please select a key that only contains regular letters and no spaces."
+      return
     }
+    keyErr.textContent = ""
     if (bigLetters.includes(text[i])) {
       var txtNum =  bigLetters.indexOf(text[i])
       var num = txtNum - keyNum
@@ -105,9 +104,9 @@ document.getElementById('submit').addEventListener('click', () => {
   var text = textEl.value
   var key = keyEl.value
   var toggle = toggleEl.value
-  if (!toggle == "" && !key == "" && !text == "") {
+  if (!key == "" && !text == "") {
     if (toggle == "encode") {encode(text, key)} else {decode(text, key)}
   } else {
-    displayErrors(text, key, toggle)
+    displayErrors(text, key)
   }
 })
