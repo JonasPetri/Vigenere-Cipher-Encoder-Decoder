@@ -1,3 +1,5 @@
+import './style.css'
+
 const bigLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
 "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 const smallLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
@@ -40,7 +42,7 @@ function encode(text, key) {
     } else if (smallLetters.includes(key[i])) {
       var keyNum = smallLetters.indexOf(key[i])
     } else {
-      keyErr.textContent = "Please select a key that only conatins regular letters."
+      keyErr.textContent = "Please select a key that only contains regular letters."
     }
     if (bigLetters.includes(text[i])) {
       var txtNum =  bigLetters.indexOf(text[i])
@@ -62,7 +64,7 @@ function encode(text, key) {
       final = final + text[i]
     }
   }
-  resultEl.textContent = `Result: ${final}`
+  resultEl.textContent = final
 }
 
 function decode(text, key) {
@@ -76,7 +78,7 @@ function decode(text, key) {
     } else if (smallLetters.includes(key[i])) {
       var keyNum = smallLetters.indexOf(key[i])
     } else {
-      keyErr.textContent = "Please select a key that only conatins regular letters."
+      keyErr.textContent = "Please select a key that only contains regular letters."
     }
     if (bigLetters.includes(text[i])) {
       var txtNum =  bigLetters.indexOf(text[i])
@@ -98,7 +100,7 @@ function decode(text, key) {
       final = final + text[i]
     }
   }
-  resultEl.textContent = `Result: ${final}`
+  resultEl.textContent = final
 }
 
 document.getElementById('submit').addEventListener('click', () => {
